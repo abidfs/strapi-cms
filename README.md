@@ -1,34 +1,42 @@
-# 🚀 Getting started with Strapi
+# 🚀 Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) 
+(CLI) which lets you scaffold and manage your project in seconds.
+
+### `prerequisites`
+To use Strapi, it is necessary to have an active MySQL instance as the data source. Fortunately, there is a convenient way to start a local MySQL instance using docker-compose. You can initiate it effortlessly by executing the following command:
+```
+docker-compose up
+```
+By running this command, you will start the MySQL instance within Docker. Additionally, it will also initiate the `adminer` tool, which serves as a graphical user interface (GUI) for connecting to SQL and exploring the database. Simply visit http://localhost:7000 in the browser.
+
+### `install`
+Install dependencies
+```
+yarn install
+```
 
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
-npm run develop
-# or
 yarn develop
 ```
 
 ### `start`
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+Start your Strapi application in production mode with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
 ```
-npm run start
-# or
 yarn start
 ```
 
 ### `build`
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+Build your strapi admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
 ```
-npm run build
-# or
 yarn build
 ```
 
@@ -51,7 +59,3 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 - [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
 - [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
 - [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>

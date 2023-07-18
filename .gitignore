@@ -94,6 +94,7 @@ logs
 results
 node_modules
 .node_history
+package-lock.json
 
 ############################
 # Tests
@@ -106,7 +107,7 @@ coverage
 # Strapi
 ############################
 
-.env
+# .env
 license.txt
 exports
 *.cache
