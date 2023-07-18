@@ -1,44 +1,71 @@
 # 🚀 Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) 
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html)
 (CLI) which lets you scaffold and manage your project in seconds.
 
 ### `prerequisites`
-To use Strapi, it is necessary to have an active MySQL instance as the data source. Fortunately, there is a convenient way to start a local MySQL instance using docker-compose. You can initiate it effortlessly by executing the following command:
+
+To use Strapi, it is necessary to have an active `MySQL` instance as the data source. Fortunately, there is a convenient way to start a local `MySQL` instance using `docker-compose`. You can initiate it effortlessly by executing the following command:
+
 ```
-docker-compose up
+docker-compose up strapi-mysql adminer
 ```
-By running this command, you will start the MySQL instance within Docker. Additionally, it will also initiate the `adminer` tool, which serves as a graphical user interface (GUI) for connecting to SQL and exploring the database. Simply visit http://localhost:7000 in the browser.
+
+This will start the `MySQL` instance within Docker. Additionally, it will also start the `adminer` instance, which serves as a Graphical User Interface (GUI) for connecting to `MySQL` and exploring the database.<br>
+Simply visit http://localhost:7000 in the browser to access the `adminer` GUI.<br><br>
 
 ### `install`
+
 Install dependencies
+
 ```
 yarn install
 ```
 
+<br>
+
 ### `develop`
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+Start your `Strapi` application in `development` mode with `autoReload` enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
 yarn develop
 ```
 
+Simply visit http://localhost:1337/admin in the browser to access the `strapi` admin panel.<br>
+You may also need to setup admin account with dummy values, if you are opening `strapi` for the very first time.<br><br>
+
 ### `start`
 
-Start your Strapi application in production mode with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+Start your `Strapi` application in `production` mode with `autoReload` disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
 ```
 yarn start
 ```
 
+<br>
+
 ### `build`
 
-Build your strapi admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+Build your `strapi` admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
 ```
 yarn build
 ```
+
+<br>
+
+### `docker-compose`
+
+To launch `Strapi` and its dependencies in `docker-compose` mode, you can effortlessly start them by executing the following command.
+
+```
+docker-compose up
+```
+
+This will start the `Strapi` instance within Docker. Additionally, it will also start the `MySQL` and `adminer` instances. These all instances are configured to live in the same docker network and talk to each other.<br>
+Simply visit http://localhost:1337/admin in the browser to access the `strapi` admin panel.<br>
+Simply visit http://localhost:7000 in the browser to access the `adminer` GUI.<br><br>
 
 ## ⚙️ Deployment
 
