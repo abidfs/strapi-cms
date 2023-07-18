@@ -10,12 +10,13 @@ services:
     # NOTE: use of "mysql_native_password" is not recommended this is just an example for local config, not intended to be a production configuration
     # https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    restart: unless-stopped
+    env_file: .env
     environment:
-      MYSQL_DATABASE: strapidb
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: ${DATABASE_NAME:-strapidb}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD:-secret}
+      MYSQL_USER: ${DATABASE_USERNAME:-admin}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD:-secret}
     ports:
       - "3306:3306"
       - "33060:33060"
@@ -25,6 +26,6 @@ services:
 
   adminer:
     image: adminer
-    restart: always
+    restart: unless-stopped
     ports:
       - "7000:8080"
