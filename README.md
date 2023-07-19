@@ -8,7 +8,7 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 To use Strapi, it is necessary to have an active `MySQL` instance as the data source. Fortunately, there is a convenient way to start a local `MySQL` instance using `docker-compose`. You can initiate it effortlessly by executing the following command:
 
 ```
-docker-compose up strapi-mysql adminer
+docker-compose --file docker-compose.local.yaml up
 ```
 
 This will start the `MySQL` instance within Docker. Additionally, it will also start the `adminer` instance, which serves as a Graphical User Interface (GUI) for connecting to `MySQL` and exploring the database.<br>
@@ -60,7 +60,7 @@ yarn build
 To launch `Strapi` and its dependencies in `docker-compose` mode, you can effortlessly start them by executing the following command.
 
 ```
-docker-compose up
+docker-compose --file docker-compose.yaml up
 ```
 
 This will start the `Strapi` instance within Docker. Additionally, it will also start the `MySQL` and `adminer` instances. These all instances are configured to live in the same docker network and talk to each other.<br>
