@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cases",
+  "info": {
+    "singularName": "case",
+    "pluralName": "cases",
+    "displayName": "case",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "versions": {
+      "versioned": true
+    }
+  },
+  "attributes": {
+    "caseId": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "maxLength": 25
+    },
+    "issue": {
+      "type": "text",
+      "required": true
+    },
+    "facts": {
+      "type": "richtext",
+      "required": true
+    },
+    "appellants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.string-array",
+      "required": true,
+      "min": 1
+    },
+    "respondents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.string-array",
+      "required": true,
+      "min": 1
+    },
+    "justices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.string-array",
+      "min": 1,
+      "required": true
+    },
+    "judgementAppealed": {
+      "type": "string",
+      "required": true
+    },
+    "hearingStartDate": {
+      "type": "date",
+      "required": true
+    },
+    "hearingEndDate": {
+      "type": "date",
+      "required": true
+    },
+    "judgementDate": {
+      "type": "date",
+      "required": true
+    },
+    "judgementPdf": {
+      "type": "string",
+      "required": true
+    },
+    "pressSummaryHtml": {
+      "type": "string",
+      "required": true
+    },
+    "nationalArchiveHtml": {
+      "type": "string",
+      "required": true
+    },
+    "bailiiHtml": {
+      "type": "string",
+      "required": true
+    },
+    "judgementSummary": {
+      "type": "string",
+      "required": true
+    },
+    "hearings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "array.hearings-array",
+      "required": true,
+      "min": 1
+    }
+  }
+}

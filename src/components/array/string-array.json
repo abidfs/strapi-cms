@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_array_string_arrays",
+  "info": {
+    "displayName": "StringArray",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_array_hearings_arrays",
+  "info": {
+    "displayName": "HearingsArray",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "hearingDate": {
+      "type": "date",
+      "required": true
+    },
+    "morningSession": {
+      "type": "string",
+      "required": false
+    },
+    "afternoonSession": {
+      "type": "string"
+    }
+  }
+}
