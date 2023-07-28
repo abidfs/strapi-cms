@@ -26,5 +26,4 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN chown -R node:node /opt/app
 USER node
 EXPOSE 1337
-EXPOSE 80
 CMD ["yarn", "start"]
