@@ -2,7 +2,13 @@ import path from 'path';
 
 export default ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
-
+  const caCertPath = path.join(
+    __dirname,
+    '..',
+    '..',
+    'certs',
+    'ca-cert.crt.pem'
+  );
   const connections = {
     mysql: {
       connection: {
@@ -38,7 +44,7 @@ export default ({ env }) => {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
           ca: env('DATABASE_SSL_CA', undefined),
-          capath: env('DATABASE_SSL_CAPATH', undefined),
+          capath: env('DATABASE_SSL_CAPATH', caCertPath),
           cipher: env('DATABASE_SSL_CIPHER', undefined),
           rejectUnauthorized: env.bool(
             'DATABASE_SSL_REJECT_UNAUTHORIZED',
