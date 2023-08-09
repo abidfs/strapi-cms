@@ -7,7 +7,8 @@ const loadSecrets = async () => {
     const keyvaultUrl = `https://${process.env.VAULT_NAME}.vault.azure.net`;
     console.log('keyvault url', keyvaultUrl);
     if (keyvaultUrl) {
-      const credential = new DefaultAzureCredential();
+      const managedIdentityClientId = process.env.MANAGED_IDENTITY_CLIENT_ID;
+      const credential = new DefaultAzureCredential({ managedIdentityClientId });
       const client = new SecretClient(keyvaultUrl, credential);
       
       for await (const secret of client.listPropertiesOfSecrets()) {
