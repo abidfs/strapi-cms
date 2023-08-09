@@ -15,9 +15,7 @@
     "@strapi/plugin-i18n": "4.11.5",
     "@strapi/plugin-users-permissions": "4.11.5",
     "@strapi/strapi": "4.11.5",
-    "mysql2": "3.5.2"
-  },
-  "devDependencies": {
+    "mysql2": "3.5.2",
     "patch-package": "7.0.2"
   },
   "author": {
