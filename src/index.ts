@@ -1,3 +1,5 @@
+import loadSecrets from "./utils/keyvault";
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -5,7 +7,18 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  async register({ strapi }) {
+    if (process.env.VAULT_NAME) {
+      try {
+        const secrets = await loadSecrets();
+        strapi.config.database.connection.connection.user = secrets.dbuser;
+        strapi.config.database.connection.connection.dbpassword =
+          secrets.dbpassword;
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
