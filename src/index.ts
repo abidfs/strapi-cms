@@ -12,7 +12,7 @@ export default {
       try {
         const secrets = await loadSecrets();
         strapi.config.database.connection.connection.user = secrets.dbuser;
-        strapi.config.database.connection.connection.dbpassword =
+        strapi.config.database.connection.connection.password =
           secrets.dbpassword;
       } catch (err) {
         console.log(err);
