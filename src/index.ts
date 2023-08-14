@@ -11,9 +11,19 @@ export default {
     if (process.env.VAULT_NAME) {
       try {
         const secrets = await loadSecrets();
-        strapi.config.database.connection.connection.user = secrets.dbuser;
-        strapi.config.database.connection.connection.password =
-          secrets.dbpassword;
+        console.log("...........secrets", secrets);
+        const { admin, database, plugin, server } = strapi.config;
+        
+        admin.auth.secret = secrets.adminJwtSecret;
+        admin.apiToken.salt = secrets.adminApiTokenSalt;
+        admin.transfer.token.salt = secrets.adminTransferTokenSalt;
+
+        database.connection.connection.user = secrets.dbuser;
+        database.connection.connection.password = secrets.dbpassword;
+
+        plugin["users-permissions"].jwtSecret = secrets.jwtSecret;
+
+        server.app.keys = secrets.appKeys.split(',');
       } catch (err) {
         console.log(err);
       }
