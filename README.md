@@ -1,17 +1,17 @@
-# 🚀 Strapi CMS
+# 🚀 UK Supreme Court Content Management System
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html)
 (CLI) which lets you scaffold and manage your project in seconds.
 
 ### `prerequisites`
 
-To use Strapi, it is necessary to have an active `MySQL` instance as the data source. Fortunately, there is a convenient way to start a local `MySQL` instance using `docker-compose`. You can initiate it effortlessly by executing the following command:
+To run this project, it is necessary to have an active `MySQL` instance as the data source. Fortunately, there is a convenient way to start a local `MySQL` instance using `docker-compose`. You can initiate it by executing the following command:
 
 ```
 docker-compose --file docker-compose.local.yaml up
 ```
 
-This will start the `MySQL` instance within Docker. Additionally, it will also start the `adminer` instance, which serves as a Graphical User Interface (GUI) for connecting to `MySQL` and exploring the database.<br>
+This will start the `MySQL` instance within Docker on `localhost:3006`. Additionally, it will also start the `adminer` instance, which serves as a Graphical User Interface (GUI) for connecting to `MySQL` and exploring the database.<br>
 Simply visit http://localhost:7000 in the browser to access the `adminer` GUI.<br><br>
 
 ### `install`
@@ -26,18 +26,18 @@ yarn install
 
 ### `develop`
 
-Start your `Strapi` application in `development` mode with `autoReload` enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+Start the application in `development` mode with `autoReload` enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
 yarn develop
 ```
 
-Simply visit http://localhost:1337/admin in the browser to access the `strapi` admin panel.<br>
-You may also need to setup admin account with dummy values, if you are opening `strapi` for the very first time.<br><br>
+Simply visit http://localhost:1337/admin in the browser to access the `CMS` admin panel.<br>
+You may also need to setup admin account with dummy username and password, if you are opening `CMS` for the very first time.<br><br>
 
 ### `start`
 
-Start your `Strapi` application in `production` mode with `autoReload` disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+Start the application in `production` mode with `autoReload` disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
 ```
 yarn start
@@ -47,7 +47,7 @@ yarn start
 
 ### `build`
 
-Build your `strapi` admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+Build application admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
 ```
 yarn build
@@ -57,14 +57,14 @@ yarn build
 
 ### `docker-compose`
 
-To launch `Strapi` and its dependencies in `docker-compose` mode, you can effortlessly start them by executing the following command.
+To launch `CMS` and its dependencies in `docker-compose` mode, you can effortlessly start them by executing the following command.
 
 ```
 docker-compose --file docker-compose.yaml up
 ```
 
-This will start the `Strapi` instance within Docker. Additionally, it will also start the `MySQL` and `adminer` instances. These all instances are configured to live in the same docker network and talk to each other.<br>
-Simply visit http://localhost:1337/admin in the browser to access the `strapi` admin panel.<br>
+This will start the `CMS` instance within Docker. Additionally, it will also start the `MySQL` and `adminer` instances. These all instances are configured to live in the same docker network and talk to each other.<br>
+Simply visit http://localhost:1337/admin in the browser to access the `CMS` admin panel.<br>
 Simply visit http://localhost:7000 in the browser to access the `adminer` GUI.<br><br>
 
 ## ⚙️ Deployment
